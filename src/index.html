@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>ycloud-excel</title>
+	</head>
+	<link href="https://cdn.bootcss.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+	<body>
+	  <div id="app">
+	   <div data-bind = "text:title"></div>
+	   <!---->
+  	   <div>
+  	    <div>excel导出</div>
+  	       <ycloud-excel params = "type: 'export', exportData: $root.exportData, exportText: 'excel导出', filename: '测试一哈excel'"></ycloud-excel>
+  	   </div>
+  	    <div>
+           <ycloud-excel params = " type: 'import', importCallback: $root.importCallback, exportText: 'excel导出', filename: '测试一哈excel2'"></ycloud-excel>
+           <div data-bind = "text: $root.importdata"></div>
+       </div>
+	   
+	  </div>
+	   <script src="https://cdn.bootcss.com/jquery/2.2.2/jquery.min.js"></script>
+	  <script src="https://cdn.bootcss.com/knockout/3.4.2/knockout-min.js"></script>
+	</body>
+	
+</html>

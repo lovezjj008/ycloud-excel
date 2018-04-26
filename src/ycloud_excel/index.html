@@ -1,0 +1,45 @@
+<div class="btn-group ko-jsxlsx_excel" style="position: relative" id="" data-bind="css:{'open':dropdowntoggle}">
+    <!-- ko if: type == 'toggle' || type == 'import'-->
+    <button class="xlsx-ctn btn btn-primary" data-bind="disable: disabled">
+        <span data-bind="text:importText"></span>
+        <div class="file-ctn">
+            <input style="clip: rect(1px,1px,1px,1px);" type="file" multiple="false" id="sheetjs-input" accept=".xlsx,.xls" data-bind="event:{change:filechange}" />
+        </div>
+    </button>
+     <!--/ko-->
+    <!-- ko if: type == 'export'-->
+      <button class="xlsx-ctn btn btn-primary" data-bind="click:tplexport,text:exportText, disable: disabled" >
+          <span data-bind="text:exportText"></span>
+      </button>
+     <!--/ko-->
+    <!-- ko if: type == 'toggle'-->
+      <button  class="btn btn-primary dropdown-toggle" type="button" data-bind="click: showmore, disable: disabled">
+          <i class="fa fa-angle-down"></i>
+      </button>
+      <ul class="dropdown-menu dropdown-menu-xlsx" role="menu">
+          <li><a data-bind="click:tplexport,text:exportText"></a></li>
+      </ul>
+    <!--/ko-->
+</div>
+<style type="text/css">
+  .xlsx-ctn{
+    overflow: hidden;
+    cursor: pointer;
+  }
+  .xlsx-ctn input{
+      width: 100%;
+      height: 32px;
+  }
+  .xlsx-ctn .file-ctn{
+      position: absolute;
+      overflow: hidden;
+      height: 32px;
+      top: 0px;
+      left: 0;
+      width: 100%;
+      opacity: 0;
+  }
+  .ko-jsxlsx_excel .dropdown-menu-xlsx {
+     min-width: 120px; 
+  }
+</style>
